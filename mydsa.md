@@ -82,7 +82,38 @@ for(let i=0; i<10; i++){
 The more the loops, the more the O(n ^ "number of loops")
 
 #### O(log n)
-If input size reduces by half every iteration = Time complexity is O(logn) - Logarithmic
+If input size reduces by half every iteration then time complexity is O(logn) - Logarithmic.
+Consider a binary search example stated below:
+```
+function binarySearch(arr, target) {
+  var left = 0;
+  var right = arr.length - 1;
+  while (left <= right) {
+    const middleIndex = Math.floor((left + right) / 2);
+
+    if (arr[middleIndex] === target) {
+      // Means we found the target
+      return middleIndex;
+    } else if (arr[middleIndex] < target) {
+      // Means the target is on the right side
+      // So we ignore the left side (including the middle one) and search on the right side
+      left = middleIndex + 1;
+    } else {
+      // Means the target is on the left side
+      // So we ignore the right side (including the middle one) and search on the left side
+      right = middleIndex - 1;
+    }
+  }
+  return -1;
+}
+
+const arr = [-9, -2, 0, 3, 6, 9, 11, 16, 19];
+const target = 1; OUTPUT: -1
+const target = 6; OUTPUT: 4
+
+console.log(binarySearch(arr, target));
+OUTPUT: -1 for 1, 4 for 6
+```
 
 ### Objects - Big-O
 Consider an object as an example:
@@ -233,7 +264,7 @@ const target = 6; OUTPUT: 4
 
 console.log(binarySearch(arr, target));
 OUTPUT: -1 for 1, 4 for 6
-Time complexity: O(log n) Please refer below for explanation
+Time complexity: O(log n) Please refer O(log n) for explanation
 ```
 
 
