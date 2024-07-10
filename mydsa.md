@@ -114,6 +114,7 @@ const target = 6; OUTPUT: 4
 console.log(binarySearch(arr, target));
 OUTPUT: -1 for 1, 4 for 6
 ```
+[add image here]
 
 ### Objects - Big-O
 Consider an object as an example:
@@ -266,6 +267,48 @@ console.log(binarySearch(arr, target));
 OUTPUT: -1 for 1, 4 for 6
 Time complexity: O(log n) Please refer O(log n) for explanation
 ```
+### Sorting algorithms
+1. Bubble sort
+2. Insertion sort
+3. Quick sort
+4. Merge sort
+
+#### Bubble sort (O(n^2))
+Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated until the list is sorted.
+- It starts at the beginning of the list and compares the first two elements.
+- If the first element is greater than the second, they are swapped.
+- It then moves to the next pair of elements, compares them, and swaps if necessary.
+- This process continues until the end of the list is reached. After the first pass, the largest element will be in its correct position.
+
+**Example**:
+```
+function bubbleSort(arr) {
+  var swap = false;
+  do {
+    swap = false;
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        var temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+        swap = true;
+      }
+    }
+  } while (swap);
+}
+var myarr = [8, 20, -2, 4, -6]
+
+console.log(myarr); OUTPUT: [8, 20, -2, 4, -6]
+bubbleSort(myarr)
+console.log(myarr); OUTPUT: [-6, -2, 4, 8, 20]
+
+NOTICE how the array got changed in-place
+
+Time-complexity - O(n^2) as two loops exists
+```
+
+#### Insertion sort ()
+
 
 
 
